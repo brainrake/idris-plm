@@ -1,0 +1,9 @@
+package plm
+
+modules = PLM.Syntax.Abstract, PLM.Syntax.Concrete
+
+sourcedir = src
+
+executable = plm
+
+main = Main
