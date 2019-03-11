@@ -6,8 +6,6 @@ import PLM.Syntax.Abstract
 
 
 
-data Nat = Z | S Nat
-
 data Axiom : (t : FormulaType) -> Type where
     ImpliesIntro : (Formula t) -> (Formula t) -> Axiom t
     ImpliesTrans : (Formula t) -> (Formula t) -> (Formula t) -> Axiom t

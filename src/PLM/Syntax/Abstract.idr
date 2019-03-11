@@ -94,6 +94,7 @@ Eq FormulaType where
     FEncoding == FEncoding = True
     _ == _ = False
 
+
 mutual
     eqIndTerm : IndTerm -> IndTerm -> Bool
     eqIndTerm (IndConst n1) (IndConst n2) = n1 == n2
@@ -196,11 +197,13 @@ subformula formula1 formula2 =
 example1 : Formula FPropositional
 example1 = (Not ([IndConst "a"] `Exemplifies` (RelVar "P"))) `Implies` ([IndConst "b"] `Exemplifies` (RelVar "Q"))
 
+
 -- O!
 beingOrdinary : RelTerm 1
 beingOrdinary =
     RelLambda ["_o"]
         ([IndVar "_o"] `Exemplifies` BeingConcrete)
+
 
 -- A!
 beingAbstract : RelTerm 1
@@ -208,6 +211,7 @@ beingAbstract =
     RelLambda ["_a"]
         (Not (possibly
             ([IndVar "_a"] `Exemplifies` beingOrdinary)))
+
 
 -- "=E" idenitity relation for ordinary individuals
 identityE : RelTerm 2
@@ -238,7 +242,6 @@ identicalInd i1 i2 =
                     (equivalent
                         (i1 `Encodes` (RelVar "F"))
                         (i2 `Encodes` (RelVar "F"))))))
-
 
 
 identicalRel1 : RelTerm 1 -> RelTerm 1 -> Formula FEncoding
